@@ -1,16 +1,10 @@
 
-import { type LucideIcon, TrendingUp, TrendingDown } from 'lucide-react';
+import { TrendingUp, TrendingDown } from 'lucide-react';
 import { clsx } from 'clsx';
 
-interface KpiCardProps {
-    title: string;
-    value: string;
-    trend: number;
-    icon: LucideIcon;
-    color: 'indigo' | 'emerald' | 'amber' | 'rose';
-}
 
-const KpiCard = ({ title, value, trend, icon: Icon, color }: KpiCardProps) => {
+
+const KpiCard = ({ title, value, trend, icon: Icon, color }) => {
     const colorStyles = {
         indigo: 'bg-cyan-50 text-cyan-600 dark:bg-cyan-900/20 dark:text-cyan-400',
         emerald: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400',

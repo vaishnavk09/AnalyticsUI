@@ -16,15 +16,15 @@ const reportsData = [
 ];
 
 const Reports = () => {
-    const [selectedReport, setSelectedReport] = useState<typeof reportsData[0] | null>(null);
+    const [selectedReport, setSelectedReport] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleViewReport = (report: typeof reportsData[0]) => {
+    const handleViewReport = (report) => {
         setSelectedReport(report);
         setIsModalOpen(true);
     };
 
-    const getStatusColor = (status: string) => {
+    const getStatusColor = (status) => {
         switch (status) {
             case 'Completed': return 'text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 dark:text-emerald-400';
             case 'Processing': return 'text-amber-600 bg-amber-50 dark:bg-amber-900/20 dark:text-amber-400';
@@ -33,7 +33,7 @@ const Reports = () => {
         }
     };
 
-    const getStatusIcon = (status: string) => {
+    const getStatusIcon = (status) => {
         switch (status) {
             case 'Completed': return <CheckCircle size={14} className="mr-1.5" />;
             case 'Processing': return <AlertCircle size={14} className="mr-1.5" />;

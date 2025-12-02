@@ -1,19 +1,14 @@
 import { useState, useCallback } from 'react';
 import { initialMessages, mockResponses } from '../data/messages';
 
-interface Message {
-    id: string;
-    text: string;
-    isAi: boolean;
-    timestamp: string;
-}
+
 
 export const useChat = () => {
-    const [messages, setMessages] = useState<Message[]>(initialMessages);
+    const [messages, setMessages] = useState(initialMessages);
     const [isLoading, setIsLoading] = useState(false);
 
-    const sendMessage = useCallback(async (text: string) => {
-        const userMessage: Message = {
+    const sendMessage = useCallback(async (text) => {
+        const userMessage = {
             id: Date.now().toString(),
             text,
             isAi: false,
@@ -26,7 +21,7 @@ export const useChat = () => {
         // Simulate AI delay
         setTimeout(() => {
             const randomResponse = mockResponses[Math.floor(Math.random() * mockResponses.length)];
-            const aiMessage: Message = {
+            const aiMessage = {
                 id: (Date.now() + 1).toString(),
                 text: randomResponse,
                 isAi: true,

@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Send, Sparkles } from 'lucide-react';
 
-interface ChatInputProps {
-    onSend: (message: string) => void;
-    isLoading: boolean;
-}
 
-const ChatInput = ({ onSend, isLoading }: ChatInputProps) => {
+
+const ChatInput = ({ onSend, isLoading }) => {
     const [input, setInput] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (input.trim() && !isLoading) {
             onSend(input);

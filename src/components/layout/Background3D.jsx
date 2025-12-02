@@ -2,8 +2,8 @@ import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 
-const Stars = (props: any) => {
-    const ref = useRef<any>(null);
+const Stars = (props) => {
+    const ref = useRef(null);
 
     const [sphere] = useState(() => {
         const temp = new Float32Array(5000 * 3);
@@ -30,7 +30,7 @@ const Stars = (props: any) => {
             <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
                 <PointMaterial
                     transparent
-                    color="#06b6d4"
+                    color="#5f2f90ff"
                     size={0.002}
                     sizeAttenuation={true}
                     depthWrite={false}

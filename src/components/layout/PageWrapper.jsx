@@ -6,11 +6,9 @@ import Navbar from './Navbar';
 
 import Background3D from './Background3D';
 
-interface PageWrapperProps {
-    children: React.ReactNode;
-}
 
-const PageWrapper = ({ children }: PageWrapperProps) => {
+
+const PageWrapper = ({ children }) => {
     const { isSidebarOpen } = useStore();
 
     return (

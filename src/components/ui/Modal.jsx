@@ -2,14 +2,9 @@ import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface ModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    title: string;
-    children: React.ReactNode;
-}
 
-const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
+
+const Modal = ({ isOpen, onClose, title, children }) => {
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';

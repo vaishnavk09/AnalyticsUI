@@ -3,13 +3,9 @@ import { Bot, User } from 'lucide-react';
 import { clsx } from 'clsx';
 import { motion } from 'framer-motion';
 
-interface ChatBubbleProps {
-    message: string;
-    isAi: boolean;
-    timestamp: string;
-}
 
-const ChatBubble = ({ message, isAi, timestamp }: ChatBubbleProps) => {
+
+const ChatBubble = ({ message, isAi, timestamp }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 10 }}

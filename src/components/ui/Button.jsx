@@ -2,11 +2,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
-    size?: 'sm' | 'md' | 'lg';
-    isLoading?: boolean;
-}
+
 
 const Button = ({
     className,
@@ -15,7 +11,7 @@ const Button = ({
     isLoading,
     children,
     ...props
-}: ButtonProps) => {
+}) => {
     const variants = {
         primary: 'bg-cyan-600 text-white hover:bg-cyan-700 shadow-sm shadow-cyan-200 dark:shadow-none',
         secondary: 'bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700',

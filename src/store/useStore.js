@@ -1,13 +1,8 @@
 import { create } from 'zustand';
 
-interface AppState {
-    isSidebarOpen: boolean;
-    toggleSidebar: () => void;
-    isDarkMode: boolean;
-    toggleDarkMode: () => void;
-}
 
-export const useStore = create<AppState>((set) => ({
+
+export const useStore = create((set) => ({
     isSidebarOpen: true,
     toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
     isDarkMode: false,

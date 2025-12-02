@@ -4,14 +4,9 @@ import { motion, Reorder } from 'framer-motion';
 import Button from '../components/ui/Button';
 import { clsx } from 'clsx';
 
-interface WorkflowStep {
-    id: string;
-    title: string;
-    description: string;
-    type: 'trigger' | 'action' | 'condition';
-}
 
-const initialSteps: WorkflowStep[] = [
+
+const initialSteps = [
     { id: '1', title: 'Fetch Data', description: 'Retrieve daily sales data from API', type: 'trigger' },
     { id: '2', title: 'Process Analytics', description: 'Calculate KPIs and trends', type: 'action' },
     { id: '3', title: 'Check Thresholds', description: 'Verify if targets are met', type: 'condition' },
@@ -22,7 +17,7 @@ const Workflows = () => {
     const [steps, setSteps] = useState(initialSteps);
 
     const addStep = () => {
-        const newStep: WorkflowStep = {
+        const newStep = {
             id: Date.now().toString(),
             title: 'New Step',
             description: 'Configure this step...',
@@ -31,11 +26,11 @@ const Workflows = () => {
         setSteps([...steps, newStep]);
     };
 
-    const removeStep = (id: string) => {
+    const removeStep = (id) => {
         setSteps(steps.filter((step) => step.id !== id));
     };
 
-    const getStepColor = (type: string) => {
+    const getStepColor = (type) => {
         switch (type) {
             case 'trigger': return 'bg-cyan-50 border-cyan-200 dark:bg-cyan-900/20 dark:border-cyan-800';
             case 'action': return 'bg-white border-slate-200 dark:bg-slate-800 dark:border-slate-700';

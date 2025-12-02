@@ -8,7 +8,7 @@ import PieChart from '../components/charts/PieChart';
 import AreaChart from '../components/charts/AreaChart';
 
 const Dashboard = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef(null);
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
